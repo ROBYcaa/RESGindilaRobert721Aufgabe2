@@ -1,0 +1,44 @@
+package model;
+
+public class Product {
+    private String name;
+    private double price;
+    private String originRegion;
+
+    // Konstruktor
+    public Product(String name, double price, String originRegion) {
+        this.name = name;
+        this.price = price;
+        this.originRegion = originRegion;
+    }
+
+    // Getter und Setter
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getOriginRegion() {
+        return originRegion;
+    }
+
+    public void setOriginRegion(String originRegion) {
+        this.originRegion = originRegion;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{name='" + name + "', price=" + price + ", originRegion='" + originRegion + "'}";
+    }
+}
