@@ -7,7 +7,6 @@ public class Character {
     private String originVillage;
     private List<Product> purchasedProducts;
 
-    // Konstruktor
     public Character(int id, String name, String originVillage, List<Product> purchasedProducts) {
         this.id = id;
         this.name = name;
@@ -15,7 +14,6 @@ public class Character {
         this.purchasedProducts = purchasedProducts;
     }
 
-    // Getter und Setter
     public int getId() {
         return id;
     }

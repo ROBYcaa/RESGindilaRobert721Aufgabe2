@@ -1,6 +1,6 @@
 package view;
 
-import controller.CharacterController;
+//import controller.CharacterController;
 import controller.ProductController;
 import model.Product;
 import repository.CharacterRepository;
@@ -14,7 +14,7 @@ public class MainUI {
     private static ProductRepository productRepository = new ProductRepository();
     private static CharacterRepository characterRepository = new CharacterRepository();
     private static ProductController productController = new ProductController(productRepository);
-    private static CharacterController characterController = new CharacterController(characterRepository);
+   // private static CharacterController characterController = new CharacterController(characterRepository);
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class MainUI {
             if (option == 1) {
                 manageProducts(scanner);
             } else if (option == 2) {
-                manageCharacters(scanner);
+            //    manageCharacters(scanner);
             } else if (option == 3) {
                 break;
             }
@@ -80,61 +80,61 @@ public class MainUI {
         }
     }
 
-    private static void manageCharacters(Scanner scanner) {
-        while (true) {
-            System.out.println("Charakterverwaltung:");
-            System.out.println("1. Charakter hinzufügen");
-            System.out.println("2. Charakter anzeigen");
-            System.out.println("3. Charakter bearbeiten");
-            System.out.println("4. Charakter löschen");
-            System.out.println("5. Zurück");
-            int option = scanner.nextInt();
-            scanner.nextLine();
-
-            if (option == 1) {
-                System.out.print("ID des Charakters: ");
-                int id = scanner.nextInt();
-                scanner.nextLine();
-                System.out.print("Name des Charakters: ");
-                String name = scanner.nextLine();
-                System.out.print("Herkunftsland des Charakters: ");
-                String originVillage = scanner.nextLine();
-                List<Product> products = new ArrayList<>();
-                System.out.print("Wie viele Produkte wurden gekauft? ");
-                int productCount = scanner.nextInt();
-                scanner.nextLine();
-                for (int i = 0; i < productCount; i++) {
-                    System.out.print("Produktname: ");
-                    String productName = scanner.nextLine();
-                    System.out.print("Preis: ");
-                    double productPrice = scanner.nextDouble();
-                    scanner.nextLine();
-                    System.out.print("Herkunftsregion: ");
-                    String productOrigin = scanner.nextLine();
-                    products.add(new Product(productName, productPrice, productOrigin));
-                }
-                characterController.addCharacter(id, name, originVillage, products);
-            } else if (option == 2) {
-                characterController.showAllCharacters();
-            } else if (option == 3) {
-                System.out.print("Index des Charakters bearbeiten: ");
-                int index = scanner.nextInt();
-                scanner.nextLine();
-                System.out.print("Neue ID: ");
-                int id = scanner.nextInt();
-                scanner.nextLine();
-                System.out.print("Neuer Name: ");
-                String name = scanner.nextLine();
-                System.out.print("Neues Herkunftsdorf: ");
-                String originVillage = scanner.nextLine();
-                characterController.updateCharacter(index, id, name, originVillage, new ArrayList<>());
-            } else if (option == 4) {
-                System.out.print("Index des Charakters löschen: ");
-                int index = scanner.nextInt();
-                characterController.removeCharacter(index);
-            } else if (option == 5) {
-                break;
-            }
-        }
-    }
+//    private static void manageCharacters(Scanner scanner) {
+//        while (true) {
+//            System.out.println("Charakterverwaltung:");
+//            System.out.println("1. Charakter hinzufügen");
+//            System.out.println("2. Charakter anzeigen");
+//            System.out.println("3. Charakter bearbeiten");
+//            System.out.println("4. Charakter löschen");
+//            System.out.println("5. Zurück");
+//            int option = scanner.nextInt();
+//            scanner.nextLine();
+//
+//            if (option == 1) {
+//                System.out.print("ID des Charakters: ");
+//                int id = scanner.nextInt();
+//                scanner.nextLine();
+//                System.out.print("Name des Charakters: ");
+//                String name = scanner.nextLine();
+//                System.out.print("Herkunftsland des Charakters: ");
+//                String originVillage = scanner.nextLine();
+//                List<Product> products = new ArrayList<>();
+//                System.out.print("Wie viele Produkte wurden gekauft? ");
+//                int productCount = scanner.nextInt();
+//                scanner.nextLine();
+//                for (int i = 0; i < productCount; i++) {
+//                    System.out.print("Produktname: ");
+//                    String productName = scanner.nextLine();
+//                    System.out.print("Preis: ");
+//                    double productPrice = scanner.nextDouble();
+//                    scanner.nextLine();
+//                    System.out.print("Herkunftsregion: ");
+//                    String productOrigin = scanner.nextLine();
+//                    products.add(new Product(productName, productPrice, productOrigin));
+//                }
+//                characterController.addCharacter(id, name, originVillage, products);
+//            } else if (option == 2) {
+//                characterController.showAllCharacters();
+//            } else if (option == 3) {
+//                System.out.print("Index des Charakters bearbeiten: ");
+//                int index = scanner.nextInt();
+//                scanner.nextLine();
+//                System.out.print("Neue ID: ");
+//                int id = scanner.nextInt();
+//                scanner.nextLine();
+//                System.out.print("Neuer Name: ");
+//                String name = scanner.nextLine();
+//                System.out.print("Neues Herkunftsdorf: ");
+//                String originVillage = scanner.nextLine();
+//                characterController.updateCharacter(index, id, name, originVillage, new ArrayList<>());
+//            } else if (option == 4) {
+//                System.out.print("Index des Charakters löschen: ");
+//                int index = scanner.nextInt();
+//                characterController.removeCharacter(index);
+//            } else if (option == 5) {
+           //     break;
+            //}
+     //   }
+ //   }
 }

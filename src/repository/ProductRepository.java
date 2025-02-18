@@ -13,10 +13,19 @@ public class ProductRepository {
         this.products = new ArrayList<>();
     }
 
+    /**
+     * method to add product
+     * @param product
+     */
     public void addProduct(Product product) {
         products.add(product);
     }
 
+    /**
+     * method update product
+     * @param index
+     * @param product
+     */
     public void updateProduct(int index, Product product) {
         if (index >= 0 && index < products.size()) {
             products.set(index, product);
